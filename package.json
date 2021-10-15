@@ -1,0 +1,25 @@
+{
+  "name": "thelounge-theme-new-morning",
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "MIT",
+  "keywords": [
+    "thelounge",
+    "thelounge-theme"
+  ],
+  "thelounge": {
+    "css": "new-morning.css",
+    "name": "New Morning",
+    "type": "theme"
+  },
+  "description": "Discord like theme for The Lounge client.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbeitins/thelounge-theme-new-morning.git"
+  },
+  "author": "jbeitins",
+  "bugs": {
+    "url": "https://github.com/jbeitins/thelounge-theme-new-morning/issues"
+  },
+  "homepage": "https://github.com/jbeitins/thelounge-theme-new-morning#readme"
+}
