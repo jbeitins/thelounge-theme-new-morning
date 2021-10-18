@@ -83,7 +83,7 @@ html, body {
 /* Adjust paddings to be more uniform */
 
 #chat .messages {
-	padding: 10px 15px 15px;
+	padding: 10px 15px;
 }
 
 #chat .show-more {
@@ -92,21 +92,28 @@ html, body {
 
 #chat .date-marker,
 #chat .unread-marker {
-	margin: 10px 0 0;
+	margin: 0;
 }
 
 /* Modern style */
 
 #chat .msg {
 	display: block;
-	padding: 10px 0 0 !important;
+	padding: 3px 0;
 	background: none !important;
 	border: none !important;
 }
 
+#chat .msg[data-from][data-type=message] {
+	padding: 5px 0 !important;
+}
+
 #chat .content {
 	border: none !important;
-	padding: 0 !important;
+	padding: 3px 0;
+}
+
+#chat .msg[data-from][data-type=message] .content {
 	display: block;
 }
 
@@ -128,13 +135,13 @@ html, body {
 	font-size: 16px;
 }
 
-#chat .msg[data-from][data-type=message][class="msg previous-source"] .from,
-#chat .msg[data-from][data-type=message][class="msg previous-source"] .time {
+#chat .msg + .msg[data-from][data-type=message].previous-source .from,
+#chat .msg + .msg[data-from][data-type=message].previous-source .time {
 	display: none;
 }
 
-#chat .msg[data-from][data-type=message][class="msg previous-source"] {
-	padding-top: 5px !important;
+#chat .msg + .msg[data-from][data-type=message].previous-source {
+	margin-top: -10px;
 }
 
 /* Condensed split/join message tweaks */
@@ -157,15 +164,14 @@ html, body {
 #chat .condensed-summary {
 	opacity: 75%;
 	font-size: 10px;
-	padding: 2px 0;
 }
 
 #chat .condensed-summary .time {
 	display: none;
 }
 
-#chat .msg[data-type=condensed] .msg {
-    padding: 3px 0 !important;
+#chat .msg[data-type=condensed] {
+    padding: 0;
 }
 
 /* Tweak other messages */
@@ -174,16 +180,8 @@ html, body {
     color: var(--body-color);
 }
 
-#chat .msg:not([data-from][data-type=message]) .content {
-	display: inline;
-}
-
 #chat .msg:not([data-from][data-type=message]):not([data-from][data-type=notice]) .from {
 	display: none;
-}
-
-#chat .from:after {
-	content: none;
 }
 
 #chat .from:after,
@@ -195,9 +193,15 @@ html, body {
 	font-weight: bolder;
 }
 
-#chat .msg[data-type=action] .content {
+#chat .msg[data-type=action] .content,
+#chat .msg[data-type=action] .from,
+#chat .msg[data-type=action] .user {
     color: inherit;
 	font-style: italic;
+}
+
+#chat .msg[data-type=action] .user {
+	font-weight: bold;
 }
 
 #chat .toggle-content img {
