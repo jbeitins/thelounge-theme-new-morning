@@ -1,6 +1,6 @@
 {
   "name": "thelounge-theme-new-morning",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "package.json",
   "license": "MIT",
   "keywords": [
@@ -10,7 +10,8 @@
   "thelounge": {
     "css": "new-morning.css",
     "name": "New Morning",
-    "type": "theme"
+    "type": "theme",
+    "themeColor": "#303e4a"
   },
   "description": "Discord like theme for The Lounge client.",
   "repository": {

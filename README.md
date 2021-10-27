@@ -1,7 +1,7 @@
 # New Morning
 Dark, modern looking theme with Discord like message layout for *[The Lounge](https://thelounge.chat/)* self-hosted web IRC client. Based on stock *Morning* theme.
 
-![screenshot.jpg](screenshot.jpg)
+![thelounge-theme-new-morning.png](thelounge-theme-new-morning.png)
 
 ## Features
 - Message contents broken out into separate rows. Conecutive messages from same user are merged together.
@@ -9,6 +9,7 @@ Dark, modern looking theme with Discord like message layout for *[The Lounge](ht
 - Sidebar made slightly larger by default and can be resized by dragging it in bottom right corner (left of chat input box).
 - Restyled channel join inputs and button.
 - Restyled standard and condensed status messages.
+- Restyled message highlights.
 - Bunch of other tweaks and fixes.
 
 ## Requirements
