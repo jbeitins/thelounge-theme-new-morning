@@ -1,6 +1,6 @@
 {
   "name": "thelounge-theme-new-morning",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "package.json",
   "license": "MIT",
   "keywords": [
@@ -13,7 +13,7 @@
     "type": "theme",
     "themeColor": "#303e4a"
   },
-  "description": "Discord like theme for The Lounge client.",
+  "description": "Dark, modern looking theme with conversational message layout.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jbeitins/thelounge-theme-new-morning.git"
