@@ -35,14 +35,18 @@ html {
 }
 
 #chat .chat {
-	padding: 10px 15px 15px;
+	padding: 0 15px 15px;
 }
 
 #chat .messages {
 	padding: 0;
 }
 
-#chat .show-more,
+#chat .show-more {
+	padding: 0;
+	margin-top: 15px;
+}
+
 #chat .date-marker,
 #chat .unread-marker {
 	margin: 12px 0;
@@ -60,7 +64,7 @@ html {
 
 #chat .msg {
 	display: block;
-	margin: 12px 0;
+	margin: 6px 0;
 }
 
 #chat-container #chat .msg .content {
@@ -89,6 +93,14 @@ html {
 	color: inherit;
 }
 
+#chat-container #chat .msg[data-from][data-type=message] {
+	margin: 12px 0;
+}
+
+#chat-container #chat .msg[data-from][data-type=message] .content {
+	display: block;
+}
+
 #chat-container #chat .msg[data-from][data-type=message] .from {
 	font-size: 16px;
 	line-height: 14px;
@@ -101,10 +113,6 @@ html {
 
 #chat-container #chat .msg + .msg[data-from][data-type=message].previous-source {
 	margin-top: -6px;
-}
-
-#chat-container #chat .msg[data-from][data-type=message] .content {
-	display: block;
 }
 
 /* Condensed split/join message tweaks */
@@ -126,11 +134,10 @@ html {
 #chat-container #chat .msg[data-type="topic_set_by"] {
 	color: var(--body-color-muted);
 	font-size: 11px;
-	margin: 6px 0;
 }
 
 #chat-container #chat .msg[data-type="condensed"] .condensed-summary {
-    display: block;
+    display: unset;
 }
 
 #chat-container #chat .msg[data-type="condensed"] .condensed-summary .time {
@@ -147,7 +154,6 @@ html {
 #chat-container #chat .chat-view[data-type=lobby] .msg {
 	font-size: 14px;
 	color: var(--body-color);
-	margin: 6px 0;
 }
 
 #chat-container #chat .msg .new-topic {
@@ -181,7 +187,8 @@ html {
     white-space: normal;
 }
 
-#chat-container #chat .msg:last-child {
+#chat-container #chat .chat-view .msg:last-child,
+#chat-container #chat .chat-view .msg:last-child .content {
     margin-bottom: 0;
     padding-bottom: 0;
 }
