@@ -2,8 +2,6 @@
 * New Morning
 */
 
-@import 'default.css';
-
 :root {
 	--body-color: #f3f3f3;
 	--body-color-muted: #adbbc7;
@@ -32,6 +30,7 @@ html {
 
 .window {
 	border-radius: 0;
+	box-shadow: 0 0 25px rgb(0 0 0 / 50%);
 }
 
 #chat .chat {
@@ -265,6 +264,7 @@ td, th {
 
 ::-webkit-search-cancel-button {
 	-webkit-appearance: none;
+	appearance: none;
 }
 
 /* Settings and connect */
@@ -329,6 +329,7 @@ textarea#user-specified-css-input {
 
 #sidebar {
 	min-width: 260px;
+	max-width: 100%;
 	resize: horizontal;
 	overflow: hidden;
 }
@@ -461,9 +462,13 @@ textarea#user-specified-css-input {
 	right: 216px;
 }
 
-#chat .userlist .user.active,
 #chat .userlist .count {
 	background-color: var(--window-border-color);
+}
+
+#chat .userlist .user.active {
+	text-decoration: underline;
+	background-color: unset;
 }
 
 #chat .userlist .names .user {
