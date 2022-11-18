@@ -87,10 +87,17 @@ html {
 
 #chat-container #chat .msg .from {
 	width: auto;
-	padding-right: 5px;
 	-webkit-mask-image: none;
     mask-image: none;
 	color: inherit;
+}
+
+#chat-container #chat .msg .from .user {
+	padding-right: 5px;
+}
+
+#chat-container #chat .msg[data-type="unhandled"] .from {
+	display: none;
 }
 
 #chat-container #chat .msg[data-from][data-type=message] {
@@ -131,7 +138,8 @@ html {
 #chat-container #chat .msg[data-type="quit"],
 #chat-container #chat .msg[data-type="mode_channel"],
 #chat-container #chat .msg[data-type="topic"],
-#chat-container #chat .msg[data-type="topic_set_by"] {
+#chat-container #chat .msg[data-type="topic_set_by"],
+#chat-container #chat .msg[data-type="action"] {
 	color: var(--body-color-muted);
 	font-size: 11px;
 }
@@ -146,8 +154,7 @@ html {
 
 /* Tweak other messages */
 
-.only-copy,
-#chat .msg:not([data-from][data-type=message]):not([data-from][data-type=notice]) .from {
+.only-copy {
 	display: none;
 }
 
@@ -160,10 +167,6 @@ html {
 	font-weight: 600;
 	font-size: 14px;
 	color: var(--body-color);
-}
-
-#chat .msg[data-type=action] .content {
-	font-style: italic;
 }
 
 #chat .msg[data-type=whois] p {
@@ -282,6 +285,44 @@ td, th {
 
 .extra-help {
     font-size: 0.7em !important;
+}
+
+.settings-menu {
+	margin: unset; 
+	width: min(800px,100%); 
+	align-self: center; 
+	position: unset; 
+	padding: 0 20px;
+}
+
+.settings-menu :before {
+	display: none !important;
+}
+.settings-menu li {
+	font-size: unset;
+}
+
+.settings-menu ul {
+	margin: 5px 0;
+}
+.container {
+	width: min(800px,100%); 
+	padding: 0 20px;
+}
+textarea#user-specified-css-input {
+	height: 250px;
+}
+
+#sidebar .logo-container span {
+	display: none;
+}
+
+#connect .connect-row {
+	display: block;
+}
+
+#connect .input {
+	margin: 2px 0;
 }
 
 /* Sidebar */
@@ -507,10 +548,6 @@ td, th {
 	color: #f92772;
 }
 
-#chat-container #chat .chat-view .msg[data-type="action"] {
-	color: var(--body-color);
-}
-
 #chat-container #chat .chat-view .msg[data-type="notice"] {
 	color: var(--body-color);
 }
@@ -518,8 +555,9 @@ td, th {
 #chat .msg[data-type="monospace_block"] .text,
 code,
 .irc-monospace {
-	background: var(--window-border-color);
+	background: var(--window-bg-color);
 	color: var(--body-color);
+	padding: 0;
 	white-space: pre-wrap;
 }
 
